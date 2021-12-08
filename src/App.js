@@ -10,13 +10,19 @@ function App() {
   function addSymbol(symbol){
     let newExp =exp+''+symbol;
     if(exp!=0){
+      
       setExp(newExp) 
+      try{
+        setResult(eval(newExp));
+      }catch(e){}
     }else{
+      
       setExp(symbol)
+      try{
+        setResult(eval(symbol));
+      }catch(e){}
     }
-    try{
-      setResult(eval(newExp));
-    }catch(e){}
+    
   }
 
   function delSymbol(){
